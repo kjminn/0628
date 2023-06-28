@@ -264,6 +264,31 @@
                 })
             });
         });
+
+        $(document).ready(function(){
+            function showLightBox(){
+                $("#darken-background").show();
+                $("#darken-background").css("top", $(window).scrollTop());
+                $("body").css("overflow", "hidden");
+            }
+
+            function hideLightBox(){
+                $("#darken-background").hide();
+                $("body").css("overflow", "");
+            }
+
+            $("#darken-background").click(function(){
+                hideLightBox();
+            });
+
+            $("#lightbox").click(function(event){
+                event.stopPropagation();
+            })
+
+            $(".paper").click(function(){
+                showLightBox();
+            });
+        });
     </script>
 </head>
 <body>
@@ -440,7 +465,7 @@
         <div id="lightbox">
             <div class="user-information">
                 <a href="#" class="user-information-image">
-                    <img src="http://placehold.it/70x70">
+                    <img src="http://placekitten.com/70/70">
                 </a>
                 <div class="user-information-text">
                     <h3>User</h3>
@@ -449,7 +474,7 @@
             </div>
         </div>
         <hr class="lightbox-splitter">
-        <img src="http://placehold.it/600x750">
+        <img src="http://placekitten.com/600/750">
     </div>
 </body>
 </html>
